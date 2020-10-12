@@ -1,0 +1,110 @@
+# web-bank
+#SCOPE:
+System Objectives:
+The main objective of this software project is to build an Online banking system for bank customers. The Banking Application is used to manage user’s banking and financial transactions online. In the current atmosphere people/customers are not interested to visit bank personally rather they prefer online access to their accounts and for inquiry. By using Online Banking services customers and prospective customers can save time and get easy access to the account.
+The application designed by us stores user personal details in database servers. Once the user tries to login with username and password, application searches in the database. If the credentials match, then user can login otherwise application throws error “Invalid Username or password” and prompts the user with Login page to provide correct credentials.
+After successful Login, the user can view the basic account details like A/C no, balance. User also can view links to go to various activities like Fund transfer, View Transactions, complaint, View Complaint, Change credentials & Logout. 
+DATA DESIGN:
+Tables:
+In our project we use three database tables to store the information. Whenever needed, we will retrieve it from the stored tables.
+
+
+
+
+1.	Customer:
+Column name	Type
+FNAME	VARCHAR2
+LNAME	VARCHAR2
+DOB	VARCHAR2
+USER ID	VARCHAR2
+PWORD	VARCHAR2
+ACT NO	VARCHAR2( Notnull)
+GENDER	VARCHAR2
+BALANCE	NUMBER
+
+2.	Complaint:
+Column Name	Type
+COMPLAINT_NO	NUMBER
+ACT NO	VARCHAR2
+COMPLAINT_DATE	DATE
+SUBJECT	VARCHAR2
+DESCRIPTION	VARCHAR2
+STATUS	VARCHAR2
+CLOSED	VARCHAR2
+
+
+3.	Transaction:
+Column Name	Type
+TRANID	NUMBER
+ACT NO	VARCHAR2
+TRAN DATE	DATE
+TRAN DESC	VARCHAR2
+TRAN STATUS	VARCHAR2
+REMARKS	VARCHAR2
+
+4.	ADMIN:
+Column Name	Type
+NAME	VARCHAR2
+PASSWORD	VARCHAR2
+
+5.	CONTACT:
+Column Name	Type
+NAME	VARCHAR2
+EMAIL	VARCHAR2
+MESSAGE	VARCHAR2
+
+User and System Interface:
+In the User and system interface it is easy to read by all type of users and easy to accessible. In this interface we have various pages opening up as part of user interaction with the application. Home page contains links to 6 other pages and they are:
+1.	Home
+2.	About
+3.	Contact
+4.	Customer Login
+5.	Register
+ 
+# Procedural Design:
+    #Customer Register:
+1.	For registering the bank account for online operations, with all these details of username, password, first name, last name, Dob etc.
+2.	When customer providing his details to register while giving the password it should be strong, and it must satisfy the requirements like at least one uppercase and lower case letters, in the password use some special character and use numeric values.
+3.	All of these may be mixed up or individual it is depending on user. 
+4.	Once the user is registered then his/ her credentials are stored in the bank database.
+    #Customer Login: 
+1.	Once the user get access then he/ she needs to login to their account using their credentials.
+2.	If the user gives the wrong credentials, then it will not able to retrieve the user information and user is prompted for correct credentials.
+3.	So, the interface says that wrong credentials and try again with valid user name and password.
+4.	Then user needs to give the right credentials properly. Once the user provides correct credentials, then it will take the user to his bank account homepage.
+5.	After user is logged in then he/ she can view all the options he is having in his account. The options are:
+
+
+1.	View Transactions.
+2.	Fund Transfer with in bank
+3.	Fund Transfer to other bank
+4.	Complaints.
+5.	Check Complaints Status.
+6.	Change Credentials.
+7.	Logout.
+
+    #View Transactions:
+1.	The user can able to view his/ her current available balance in his/ her checking and savings account.
+2.	User can possibly view his/ her previous credit and debit transactions.
+3.	If user want to know that when and who he/ she had made his/ her recent transaction, then he/ she can view in this page.
+    #Fund Transfer:
+1.	If user has enough balance in account, then he can transfer funds.
+2.	User has option to transfer funds with in bank and transfer funds to other bank
+3.	If funds transfer is with in bank, then application checks for correctness of the account.
+4.	If funds transfer is to other bank, then application does not check for correctness as the other bank’s database will not be available with us 
+5.	After successful transfer, user’s updated balance information is shown to customer and it is updated in database and transaction data/table is also updated.
+    #Complaints:
+1.	If the user has any problem with his account or transactions, then user can register a complaint with bank using this page. 
+2.	User can make a complaint using the subject and he can describe his problem in the description.
+3.	Once user submits, complaint will be registered in bank database and can be viewed by bank’s officials.
+4.	For every complaint, a unique complaint number will be generated by database.
+
+    #Check Complaint Status:
+1.	When user dropped the complaint, user can check their complaint’s status or can view details of complaint submitted.
+
+     #Change Credentials:
+1.	 If the user needs to change login credentials (user name and password) then they can change either of them.
+2.	If user wants to change only password, it can be done
+3.	If user wants to change only username, it can be done.
+    #Logout:
+1.	When user wants to logout, he can click on Logout option which ends the session.
