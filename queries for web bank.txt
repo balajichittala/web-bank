@@ -1,0 +1,8 @@
+
+ create table customer(Fname varchar2(40),Lname varchar2(40),DOB varchar2(30),User_id varchar2(20) unique,PWord varchar2(20),Act_no varchar2(20) primary key,gender varchar2(20),balance varchar2(30));
+
+create table complaint(complaint_no number(9),act_no varchar2(20),constraint com_fk foreign key(act_no) references customer(act_no),complaint_date date default sysdate,subject varchar2(50),description varchar2(50),status varchar2(50));
+
+create table transaction(Tranid number(9),act_no varchar2(20),constraint trans_fk foreign key(act_no) references customer(act_no),Tran_date date default sysdate,Tran_desc varchar2(50),Tran_status varchar2(50),Remarks varchar2(50));
+
+create table admin(username varchar2(20),password varchar2(20));
